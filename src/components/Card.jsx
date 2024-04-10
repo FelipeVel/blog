@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function Card({ post }) {
 
@@ -36,7 +37,7 @@ function Card({ post }) {
                         {post.owner.firstName} {post.owner.lastName}
                     </Col>
                     <Col className='Card-Button'>
-                        <a className='button' href={`/${post.id}`}>Leer más</a>
+                        <Link to={`/${post.id}`} className='button'>Leer más</Link>
                     </Col>
                 </Row>
             </div>

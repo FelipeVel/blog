@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function MainCard({ post, className }) {
 
@@ -52,7 +53,7 @@ function MainCard({ post, className }) {
                         {post.likes} Likes
                     </div>
                     <div className='MainCard-Button'>
-                        <a href={`/${post.id}`} className='button'>Leer más</a>
+                        <Link to={`/${post.id}`} className='button'>Leer más</Link>
                     </div>
                 </div>
 
