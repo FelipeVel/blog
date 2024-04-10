@@ -36,7 +36,7 @@ function Card({ post }) {
                         {post.owner.firstName} {post.owner.lastName}
                     </Col>
                     <Col className='Card-Button'>
-                        <a className='button' href='#'>Leer más</a>
+                        <a className='button' href={`/${post.id}`}>Leer más</a>
                     </Col>
                 </Row>
             </div>

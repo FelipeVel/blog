@@ -1,6 +1,6 @@
 @import './config/Theme.scss';
 
-body{
+body {
   color: $font-primary-color;
 }
 
@@ -9,3 +9,4 @@ body{
 @import './components/Carrousel.scss';
 @import './components/Header.scss';
 @import './components/Tags.scss';
+@import './pages/Post.scss';

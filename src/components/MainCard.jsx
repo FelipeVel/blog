@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 
-function MainCard({ post }) {
+function MainCard({ post, className }) {
 
     const fecha = ((date) => {
         const fecha = new Date(date)
@@ -9,7 +9,7 @@ function MainCard({ post }) {
     })(post.publishDate);
 
     return (
-        <Container className='MainCard'>
+        <Container className={`MainCard ${className}`}>
             <Row>
                 <Col className='MainCard-Header' sm={6}>
                     <Row>
@@ -52,7 +52,7 @@ function MainCard({ post }) {
                         {post.likes} Likes
                     </div>
                     <div className='MainCard-Button'>
-                        <a href='#' className='button'>Leer más</a>
+                        <a href={`/${post.id}`} className='button'>Leer más</a>
                     </div>
                 </div>
 

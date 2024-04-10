@@ -14,7 +14,6 @@ function Home() {
 
     //TODO: Fetch posts from API with environment variable
     useEffect(() => {
-        console.log(tag)
         axios.get(`${tag && tag != '' ?
             `https://dummyapi.io/data/v1/tag/${tag}/post` :
             'https://dummyapi.io/data/v1/post'}`, {
@@ -28,7 +27,6 @@ function Home() {
     }, [tag]);
 
     const tagHandler = (tag) => {
-        console.log('clicked', tag)
         setTag(tag)
     }
 
