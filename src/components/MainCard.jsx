@@ -27,6 +27,17 @@ function MainCard({ post }) {
                             {post.owner.firstName} {post.owner.lastName}
                         </div>
                     </Row>
+                    <Row>
+                        <div className='MainCard-Tags'>
+                            {post.tags.map((tag, i) => {
+                                if (!tag) return null;
+                                const text = tag.trim();
+                                return text !== '' ? (
+                                    <button key={`Tag-${i}`} className='button Tag'>{text}</button>
+                                ) : null
+                            })}
+                        </div>
+                    </Row>
                 </Col>
                 <Col className='MainCard-Image' sm={6}>
                     <img src={post.image} alt={post.text} />
