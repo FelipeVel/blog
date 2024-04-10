@@ -1,19 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import MainCard from '../components/MainCard';
 import axios from 'axios'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import Card from '../components/Card';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import Tags from '../components/Tags';
 
 function Home() {
-    const [posts, setPosts] = React.useState([])
-    const [tags, setTags] = React.useState([])
+    const [posts, setPosts] = useState([])
+    const [tag, setTag] = useState('')
 
     //TODO: Fetch posts from API with environment variable
     useEffect(() => {
-        axios.get('https://dummyapi.io/data/v1/post', {
+        console.log(tag)
+        axios.get(`${tag && tag != '' ?
+            `https://dummyapi.io/data/v1/tag/${tag}/post` :
+            'https://dummyapi.io/data/v1/post'}`, {
             headers: {
                 'app-id': '6616e3c08d6bd03efdbc907e'
             }
@@ -21,19 +25,16 @@ function Home() {
             .then(res => {
                 setPosts(res.data.data)
             })
-        axios.get('https://dummyapi.io/data/v1/tag', {
-            headers: {
-                'app-id': '6616e3c08d6bd03efdbc907e'
-            }
-        })
-            .then(res => {
-                setTags(res.data.data)
-            })
-    }, []);
+    }, [tag]);
 
-    console.log(posts.length)
+    const tagHandler = (tag) => {
+        console.log('clicked', tag)
+        setTag(tag)
+    }
+
     return (
         <div className='Home'>
+            <Tags onSelectedTag={tagHandler} />
             {posts.length > 0 ? <>
                 <MainCard key={posts[0].id} post={posts[0]} />
                 <Swiper
@@ -43,7 +44,6 @@ function Home() {
                         clickable: true,
                     }}
                     modules={[Pagination]}
-                    bulletClass='Bullet'
                 >
                     {posts.slice(1).map(post => (
                         <SwiperSlide key={post.id}>
@@ -52,7 +52,7 @@ function Home() {
                     ))}
                 </Swiper>
             </> :
-                <h1>Cargando...</h1>}
+                <h1>No se encontraron posts</h1>}
         </div>
     )
 }
