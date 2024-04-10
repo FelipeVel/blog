@@ -1,0 +1,7 @@
+@import './config/Theme.scss';
+
+body{
+  color: $font-primary-color;
+}
+
+@import './components/PostCard.scss';
