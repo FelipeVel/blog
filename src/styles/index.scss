@@ -4,4 +4,7 @@ body{
   color: $font-primary-color;
 }
 
-@import './components/PostCard.scss';
+@import './components/MainCard.scss';
+@import './components/Card.scss';
+@import './components/Carrousel.scss';
+@import './components/Header.scss';

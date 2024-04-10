@@ -3,4 +3,15 @@ $secondary-color: #339f3a;
 $font-primary-color: #000000;
 $font-secondary-color: #ffffff;
 $background-color: #ffffff;
-$item-background-color: #cecccc;
+$item-background-color: #e7e7e7;
+
+a.button {
+    background-color: $secondary-color;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: $font-secondary-color;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    margin: auto;
+}
