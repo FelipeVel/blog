@@ -6,8 +6,8 @@ import Post from "./pages/Post";
 function App() {
   return (
     <>
-    <Header />
     <Router>
+    <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:postId" element={<Post />} />
