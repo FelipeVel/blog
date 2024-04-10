@@ -1,0 +1,41 @@
+.Tags {
+    margin: auto 5rem;
+    display: flex;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        width: 1em;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+    }
+
+    & {
+        scrollbar-width: thin;
+        scrollbar-color: darkgrey rgba(255, 255, 255, 0);
+    }
+
+    .Tag {
+        background-color: $secondary-inactive-color;
+        color: $font-primary-color;
+        border: none;
+        padding: 0 0.5rem;
+        margin: .1rem .5rem;
+        border-radius: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 10%;
+
+        &:hover {
+            background-color: $secondary-color;
+            color: $font-secondary-color;
+        }
+    }
+}

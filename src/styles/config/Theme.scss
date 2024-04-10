@@ -1,5 +1,6 @@
 $primary-color: #000000;
 $secondary-color: #339f3a;
+$secondary-inactive-color: rgba(138, 228, 141, 0.693);
 $font-primary-color: #000000;
 $font-secondary-color: #ffffff;
 $background-color: #ffffff;
@@ -14,4 +15,17 @@ a.button {
     font-weight: bold;
     display: flex;
     margin: auto;
+}
+
+.Tag {
+    background-color: $secondary-inactive-color;
+    color: $font-primary-color;
+    border: none;
+    padding: 0 0.5rem;
+    margin: .1rem .5rem;
+    border-radius: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 10%;
 }
