@@ -29,3 +29,8 @@ a.button {
     text-overflow: ellipsis;
     min-width: 10%;
 }
+
+a {
+    color: $secondary-color;
+    text-decoration: none;
+}
