@@ -22,7 +22,18 @@ Después de tener el código, se debe navegar a la carpeta donde se descargó el
 
 ``` cd blog ```
 
-Una vez dentro, se deben obtener las dependencias, y luego, ejecutar el código, esto se hace con los siguientes comandos:
+Para ejecutar la versión en esta rama, se debe hacer el cambio de rama en el repositorio local, esto se hace con:
+
+``` git checkout despues-de-entrega ```
+
+Luego, se deben configurar las variables de entorno, estos son los valores:
+
+```
+REACT_APP_DUMMY_API_BASE_URL=https://dummyapi.io/data/v1
+REACT_APP_DUMMY_APP_ID=6616e3c08d6bd03efdbc907e
+```
+
+Una vez hecho esto, se deben obtener las dependencias, y luego, ejecutar el código, esto se hace con los siguientes comandos:
 
 ``` 
 npm i 
@@ -36,6 +47,7 @@ El bloque de comandos completo es el siguiente:
 cd C:/Users/%USERNAME%/Documents
 git clone https://github.com/FelipeVel/blog.git
 cd blog
+git checkout despues-de-entrega
 npm i 
 npm run start
 ```
