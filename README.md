@@ -6,6 +6,7 @@ Creado por: Harrison Felipe Velandia Pinto
 - Creación de botón ver más
 - Creación de vista de usuarios
 - Mejora de componente de tags
+- Manejo de variables de entorno
 
 ## Dependencias necesarias
 - [NodeJs](https://nodejs.org/en) : Node.js es un entorno de ejecución de JavaScript diseñado para construir aplicaciones de red escalables y eficientes.
