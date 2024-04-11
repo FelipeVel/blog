@@ -9,9 +9,9 @@ function Users() {
     const [page, setPage] = useState(0)
 
     useEffect(() => {
-        axios.get(`https://dummyapi.io/data/v1/user?limit=10&page=${page}`, {
+        axios.get(`${process.env.REACT_APP_DUMMY_API_BASE_URL}/user?limit=10&page=${page}`, {
             headers: {
-                'app-id': '6616e3c08d6bd03efdbc907e'
+                'app-id': process.env.REACT_APP_DUMMY_APP_ID
             }
         })
             .then(res => {

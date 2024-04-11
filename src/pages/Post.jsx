@@ -10,17 +10,17 @@ function Post() {
     const [comments, setComments] = useState([])
 
     useEffect(() => {
-        axios.get(`https://dummyapi.io/data/v1/post/${postId}`, {
+        axios.get(`${process.env.REACT_APP_DUMMY_API_BASE_URL}/post/${postId}`, {
             headers: {
-                'app-id': '6616e3c08d6bd03efdbc907e'
+                'app-id': process.env.REACT_APP_DUMMY_APP_ID
             }
         })
             .then(res => {
                 setPost(res.data);
             })
-        axios.get(`https://dummyapi.io/data/v1/post/${postId}/comment`, {
+        axios.get(`${process.env.REACT_APP_DUMMY_API_BASE_URL}/post/${postId}/comment`, {
             headers: {
-                'app-id': '6616e3c08d6bd03efdbc907e'
+                'app-id': process.env.REACT_APP_DUMMY_APP_ID
             }
         })
             .then(res => {

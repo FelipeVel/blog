@@ -18,11 +18,11 @@ function Home() {
     //TODO: Fetch posts from API with environment variable
     useEffect(() => {
         const apiUrl = `${tag && tag != '' ?
-            `https://dummyapi.io/data/v1/tag/${tag}/post` :
-            'https://dummyapi.io/data/v1/post'}`
+            `${process.env.REACT_APP_DUMMY_API_BASE_URL}/tag/${tag}/post` :
+            `${process.env.REACT_APP_DUMMY_API_BASE_URL}/post`}`
         axios.get(`${apiUrl}?limit=20&page=${page}`, {
             headers: {
-                'app-id': '6616e3c08d6bd03efdbc907e'
+                'app-id': process.env.REACT_APP_DUMMY_APP_ID
             }
         })
             .then(res => {
@@ -31,6 +31,8 @@ function Home() {
     }, [tag, page]);
 
     const tagHandler = (tag) => {
+        setPosts([])
+        setPage(0)
         setTag(tag)
     }
 
