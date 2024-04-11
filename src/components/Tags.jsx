@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-function Tags({ onSelectedTag }) {
+function Tags({ selectedTag = '', onSelectedTag }) {
     const [tags, setTags] = useState([])
 
     useEffect(() => {
@@ -24,7 +24,10 @@ function Tags({ onSelectedTag }) {
                 if (!tag) return null;
                 const text = tag.trim();
                 return text !== '' ? (
-                    <button key={`Tag-${i}`} className='button Tag' onClick={() => onSelectedTag(text)}>{text}</button>
+                    <button key={`Tag-${i}`} className={`button Tag ${selectedTag === text ? 'Tag_active' : ''}`} onClick={() => {
+                        return selectedTag === text ? onSelectedTag('') :
+                            onSelectedTag(text)
+                    }}>{text}</button>
                 ) : null
             })}
         </div>

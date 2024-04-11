@@ -38,7 +38,7 @@ function Home() {
 
     return (
         <div className='Home'>
-            <Tags onSelectedTag={tagHandler} />
+            <Tags selectedTag={tag} onSelectedTag={tagHandler} />
             {posts.length > 0 ? <>
                 <MainCard key={posts[0].id} post={posts[0]} />
                 <Swiper

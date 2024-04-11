@@ -33,7 +33,8 @@
         text-overflow: ellipsis;
         min-width: 10%;
 
-        &:hover {
+        &:hover,
+        &_active {
             background-color: $secondary-color;
             color: $font-secondary-color;
         }
