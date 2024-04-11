@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import axios from 'axios'
 import UserCard from '../components/UserCard'
 import LoadMore from '../components/LoadMore';
@@ -21,9 +21,11 @@ function Users() {
 
     return (
         <Container className='Users'>
-            {users.length > 0 ? users.map(user => (
-                <UserCard key={user.id} user={user} />
-            )) : null}
+            <Row className='g-4'>
+                {users.length > 0 ? users.map(user => (
+                    <UserCard key={user.id} user={user} />
+                )) : null}
+            </Row>
             <LoadMore loadMoreHandler={() => setPage(page + 1)} />
         </Container>
     )

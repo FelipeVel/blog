@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import Tags from '../components/Tags';
 import LoadMore from '../components/LoadMore';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function Home() {
     const [posts, setPosts] = useState([])
@@ -45,6 +46,7 @@ function Home() {
                         clickable: true,
                     }}
                     modules={[Pagination]}
+                    className='Home-Swiper'
                 >
                     {posts.slice(1, posts.length > 20 ? 20 : posts.length).map(post => (
                         <SwiperSlide key={post.id}>
@@ -53,9 +55,17 @@ function Home() {
                     ))}
                 </Swiper>
                 {
-                    posts.length > 20 ? posts.slice(20).map(post => (
-                        <Card key={post.id} post={post} />
-                    )) : null
+                    posts.length > 20 ?
+                        <Container>
+                            <Row className='g-4'>
+                                {posts.slice(20).map(post => (
+                                    <Col sm={6} md={3}>
+                                        <Card key={post.id} post={post} />
+                                    </Col>
+                                ))}
+                            </Row>
+                        </Container>
+                        : null
                 }
                 <LoadMore loadMoreHandler={() => setPage(page + 1)} />
             </> :
