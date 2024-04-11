@@ -2,6 +2,9 @@
 
 Creado por: Harrison Felipe Velandia Pinto
 
+### Nota
+Hubo algunos problemas durante el tiempo de entrega, en la rama [despues-de-entrega](https://github.com/FelipeVel/blog/tree/despues-de-entrega) se encuentra el código más avanzado con algunos problemas ya solucionados.
+
 ## Dependencias necesarias
 - [NodeJs](https://nodejs.org/en) : Node.js es un entorno de ejecución de JavaScript diseñado para construir aplicaciones de red escalables y eficientes.
 Es necesaria su instalación para utilizar su gestor de paquetes npm.
