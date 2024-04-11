@@ -7,24 +7,27 @@ import Card from '../components/Card';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Tags from '../components/Tags';
+import LoadMore from '../components/LoadMore';
 
 function Home() {
     const [posts, setPosts] = useState([])
     const [tag, setTag] = useState('')
+    const [page, setPage] = useState(0)
 
     //TODO: Fetch posts from API with environment variable
     useEffect(() => {
-        axios.get(`${tag && tag != '' ?
+        const apiUrl = `${tag && tag != '' ?
             `https://dummyapi.io/data/v1/tag/${tag}/post` :
-            'https://dummyapi.io/data/v1/post'}`, {
+            'https://dummyapi.io/data/v1/post'}`
+        axios.get(`${apiUrl}?limit=20&page=${page}`, {
             headers: {
                 'app-id': '6616e3c08d6bd03efdbc907e'
             }
         })
             .then(res => {
-                setPosts(res.data.data)
+                setPosts([...posts, ...res.data.data])
             })
-    }, [tag]);
+    }, [tag, page]);
 
     const tagHandler = (tag) => {
         setTag(tag)
@@ -43,12 +46,18 @@ function Home() {
                     }}
                     modules={[Pagination]}
                 >
-                    {posts.slice(1).map(post => (
+                    {posts.slice(1, posts.length > 20 ? 20 : posts.length).map(post => (
                         <SwiperSlide key={post.id}>
                             <Card post={post} />
                         </SwiperSlide>
                     ))}
                 </Swiper>
+                {
+                    posts.length > 20 ? posts.slice(20).map(post => (
+                        <Card key={post.id} post={post} />
+                    )) : null
+                }
+                <LoadMore loadMoreHandler={() => setPage(page + 1)} />
             </> :
                 <h1>No se encontraron posts</h1>}
         </div>

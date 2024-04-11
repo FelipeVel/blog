@@ -1,0 +1,12 @@
+.LoadMore {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+    background-color: $secondary-color;
+    color: $font-secondary-color;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+    padding: 0 .5rem;
+}

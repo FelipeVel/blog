@@ -1,0 +1,24 @@
+.UserCard {
+    background-color: $item-background-color;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    &-Image {
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    &-Header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+            text-transform: capitalize;
+        }
+    }
+}
