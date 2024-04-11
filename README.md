@@ -2,6 +2,11 @@
 
 Creado por: Harrison Felipe Velandia Pinto
 
+## Cambios después de la entrega
+- Creación de botón ver más
+- Creación de vista de usuarios
+- Mejora de componente de tags
+
 ## Dependencias necesarias
 - [NodeJs](https://nodejs.org/en) : Node.js es un entorno de ejecución de JavaScript diseñado para construir aplicaciones de red escalables y eficientes.
 Es necesaria su instalación para utilizar su gestor de paquetes npm.
@@ -57,7 +62,17 @@ npm run start
 ### Homepage
 
 ![Homepage](image.png)
+![Homepage inferior](image-2.png)
+![Homepage con más blogs cargados](image-3.png)
+
+#### Con filtro de etiquetas
+
+![Filtro pet](image-5.png)
 
 ### Post
 
 ![Post page](image-1.png)
+
+### Usuarios
+
+![Usuarios](image-4.png)
